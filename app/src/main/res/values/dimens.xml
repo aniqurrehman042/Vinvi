@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_max">@dimen/_40sdp</dimen>
+    <dimen name="padding_back_button">@dimen/_8sdp</dimen>
+    <dimen name="height_button">30dp</dimen>
+</resources>
