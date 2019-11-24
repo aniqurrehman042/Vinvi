@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/padding_max"
-    tools:context=".ui.Login"
+    tools:context=".ui.Signup"
     android:background="@color/white">
 
     <LinearLayout
@@ -28,11 +28,11 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_welcome"
+        android:id="@+id/tv_heading_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:text="Welcome Aboard"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:text="Sign up"
         android:textColor="@color/black"
         android:textSize="@dimen/_20ssp"
         android:textStyle="bold"
@@ -40,41 +40,92 @@
         app:layout_constraintTop_toBottomOf="@id/ll_back_button" />
 
     <TextView
-        android:id="@+id/tv_login_continue"
+        android:id="@+id/tv_getting_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log in to continue using our app"
+        android:text="You are just getting in"
         android:textColor="@color/light_grey"
         android:textSize="@dimen/_9ssp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_welcome" />
+        app:layout_constraintTop_toBottomOf="@id/tv_heading_signup" />
 
     <TextView
-        android:id="@+id/tv_username"
+        android:id="@+id/tv_first_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_30sdp"
-        android:text="Username"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:text="First name*"
         android:textColor="@color/light_grey"
         android:textSize="@dimen/_8ssp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_login_continue" />
+        app:layout_constraintTop_toBottomOf="@id/tv_getting_in" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/et_username"
+        android:id="@+id/et_first_name"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/height_edittext"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/bg_et"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:hint="First Name"
+        android:textColorHint="@color/light_grey"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintRight_toLeftOf="@id/et_last_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_first_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:lines="1"
+        android:maxLength="15"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_last_name"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/height_edittext"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:background="@drawable/bg_et"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:hint="Last Name"
+        android:textColorHint="@color/light_grey"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintLeft_toRightOf="@id/et_first_name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_first_name"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:lines="1"
+        android:maxLength="15"/>
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Email*"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_first_name" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_edittext"
         android:layout_marginTop="@dimen/_5sdp"
-        android:background="@drawable/bg_et_red_border"
+        android:background="@drawable/bg_et"
+        android:hint="Your email here"
+        android:textColorHint="@color/light_grey"
         android:padding="@dimen/_10sdp"
         android:textColor="@color/black"
-        android:hint="Type username here"
-        android:textColorHint="@color/light_grey"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_username"
-        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email"
+        android:inputType="textEmailAddress"
         android:maxLines="1"
         android:lines="1"
         android:maxLength="30"/>
@@ -85,11 +136,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
-        android:text="Password"
+        android:text="Password*"
         android:textColor="@color/light_grey"
         android:textSize="@dimen/_8ssp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_username" />
+        app:layout_constraintTop_toBottomOf="@id/et_email" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_password"
@@ -98,7 +149,7 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:background="@drawable/bg_et"
         android:drawableRight="@drawable/ic_lock_grey"
-        android:hint="Type password here"
+        android:hint="• • • • • • • • • • •"
         android:textColorHint="@color/light_grey"
         android:padding="@dimen/_10sdp"
         android:textColor="@color/black"
@@ -111,28 +162,46 @@
         android:maxLength="30"/>
 
     <TextView
-        android:id="@+id/tv_forgot_password"
+        android:id="@+id/tv_retype_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:layout_marginRight="@dimen/_10sdp"
-        android:text="Forgot Password?"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Re-type Password*"
         android:textColor="@color/light_grey"
-        android:textSize="@dimen/_9ssp"
-        app:layout_constraintRight_toRightOf="@id/et_password"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_password" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_retype_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_edittext"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/bg_et"
+        android:drawableRight="@drawable/ic_lock_grey"
+        android:hint="• • • • • • • • • • •"
+        android:textColorHint="@color/light_grey"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_retype_password"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:lines="1"
+        android:maxLength="30"/>
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_login_button"
+        android:layout_height="@dimen/height_signup_button"
         android:layout_marginTop="@dimen/_20sdp"
         android:background="@drawable/bg_round_red"
-        android:text="Log in"
+        android:text="Sign up"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/_9ssp"
-        app:layout_constraintTop_toBottomOf="@id/tv_forgot_password" />
+        app:layout_constraintTop_toBottomOf="@id/et_retype_password" />
 
     <LinearLayout
         android:id="@+id/ll_signup"

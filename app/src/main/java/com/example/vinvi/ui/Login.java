@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.vinvi.R;
 
-public class LogIn extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
