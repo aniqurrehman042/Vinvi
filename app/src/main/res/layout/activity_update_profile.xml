@@ -4,6 +4,256 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.UpdateProfile">
+    tools:context=".ui.UpdateProfile"
+    android:background="@color/light_red">
+
+    <ImageView
+        android:id="@+id/iv_settings"
+        android:layout_width="@dimen/size_back_button"
+        android:layout_height="@dimen/size_back_button"
+        android:layout_marginTop="@dimen/margin_back_button"
+        android:layout_marginLeft="@dimen/margin_back_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:srcCompat="@drawable/ic_settings"
+        android:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/iv_home_button"
+        android:layout_width="@dimen/size_back_button"
+        android:layout_height="@dimen/size_back_button"
+        android:layout_marginRight="@dimen/margin_back_button"
+        app:layout_constraintTop_toTopOf="@+id/iv_settings"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/ic_home"
+        android:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/iv_nearby_button"
+        android:layout_width="@dimen/size_back_button"
+        android:layout_height="@dimen/size_back_button"
+        app:layout_constraintTop_toTopOf="@+id/iv_home_button"
+        app:layout_constraintRight_toLeftOf="@id/iv_home_button"
+        app:srcCompat="@drawable/ic_location"
+        android:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_update_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/margin_top_bar_text"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_top_bar"
+        android:text="Update Profile" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_update_profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/bg_round_top_white"
+        android:paddingLeft="@dimen/_30sdp"
+        android:paddingRight="@dimen/_30sdp"
+        android:paddingTop="@dimen/_20sdp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_65sdp"
+            app:riv_corner_radius="100dp"
+            android:src="@color/light_red"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/tv_add_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Profile Photo"
+            android:textColor="@color/light_grey"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:textSize="@dimen/_9ssp"/>
+
+        <TextView
+            android:id="@+id/tv_general_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="General Info"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textSize="@dimen/_13ssp"/>
+
+        <LinearLayout
+            android:id="@+id/ll_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_round_grey"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="First Name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                android:layout_marginLeft="@dimen/_15sdp"/>
+
+            <TextView
+                android:id="@+id/et_first_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_edittext"
+                android:background="@drawable/bg_round_grey"
+                android:textAlignment="center"
+                android:drawableRight="@drawable/ic_right_arrow"
+                android:hint="Fabeeha"
+                android:textColorHint="@color/light_grey"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                android:layout_weight="0.7"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:lines="1"
+                android:maxLength="30" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/bg_round_grey"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="Last Name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                android:layout_marginLeft="@dimen/_15sdp"/>
+
+            <TextView
+                android:id="@+id/et_last_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_edittext"
+                android:background="@drawable/bg_round_grey"
+                android:textAlignment="center"
+                android:drawableRight="@drawable/ic_right_arrow"
+                android:hint="Khan"
+                android:textColorHint="@color/light_grey"
+                android:padding="@dimen/_8ssp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                android:layout_weight="0.7"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:lines="1"
+                android:maxLength="30" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/bg_round_grey"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="Email Address"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                android:layout_marginLeft="@dimen/_15sdp"/>
+
+            <TextView
+                android:id="@+id/et_email"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_edittext"
+                android:background="@drawable/bg_round_grey"
+                android:textAlignment="center"
+                android:drawableRight="@drawable/ic_right_arrow"
+                android:hint="Fabeehakhan@vinvi.com"
+                android:textColorHint="@color/light_grey"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                android:layout_weight="0.7"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:lines="1"
+                android:maxLength="30" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_change_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Password"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textSize="@dimen/_13ssp"/>
+
+        <LinearLayout
+            android:id="@+id/ll_modify_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_round_grey"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="Modify Passwords"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                android:layout_marginLeft="@dimen/_15sdp"/>
+
+            <TextView
+                android:id="@+id/et_modify_password"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_edittext"
+                android:background="@drawable/bg_round_grey"
+                android:textAlignment="center"
+                android:drawableRight="@drawable/ic_right_arrow"
+                android:textColorHint="@color/light_grey"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                android:layout_weight="0.7"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:lines="1"
+                android:maxLength="30" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_login_button"
+            android:text="Save"
+            android:background="@drawable/bg_round_red"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
