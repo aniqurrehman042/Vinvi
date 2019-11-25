@@ -97,7 +97,7 @@
         android:layout_height="@dimen/height_edittext"
         android:layout_marginTop="@dimen/_5sdp"
         android:background="@drawable/bg_round_grey"
-        android:drawableRight="@drawable/ic_lock_grey"
+        android:drawableRight="@drawable/ic_lock"
         android:hint="Type password here"
         android:textColorHint="@color/light_grey"
         android:padding="@dimen/_10sdp"

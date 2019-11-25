@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Vinvi</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="intro3_text">Send invitation cards t your contacts on different occasions and also send or receive greeting cards and set reminder for them</string>
+    <string name="intro1_text">Vinvi is a social app that introduces you to nearby contacts by sending your card to them, manages your contacts and keeps you connected through various greeting and occasional cards</string>
+    <string name="intro2_text">Introduce yourself by sending your card to the people around you. You can also receive others cards containing their contact numbers and other information. These cards will be active and you can perform different actions like calling, texting or emailing through them.</string>
 </resources>
