@@ -11,8 +11,8 @@
 
     <LinearLayout
         android:id="@+id/ll_back_button"
-        android:layout_width="@dimen/_30sdp"
-        android:layout_height="@dimen/_30ssp"
+        android:layout_width="@dimen/size_back_button"
+        android:layout_height="@dimen/size_back_button"
         android:layout_marginTop="@dimen/_10sdp"
         android:background="@drawable/bg_back_button"
         android:padding="@dimen/padding_back_button"
@@ -96,7 +96,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_edittext"
         android:layout_marginTop="@dimen/_5sdp"
-        android:background="@drawable/bg_et"
+        android:background="@drawable/bg_round_grey"
         android:drawableRight="@drawable/ic_lock_grey"
         android:hint="Type password here"
         android:textColorHint="@color/light_grey"
