@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.vinvi.R;
+
 public class SplashScreen extends AppCompatActivity {
 
     @Override

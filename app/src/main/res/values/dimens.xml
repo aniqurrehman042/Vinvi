@@ -2,8 +2,9 @@
 <resources>
     <dimen name="padding_max">@dimen/_30sdp</dimen>
     <dimen name="padding_back_button">@dimen/_8sdp</dimen>
-    <dimen name="height_login_button">30dp</dimen>
+    <dimen name="height_login_button">@dimen/_30sdp</dimen>
     <dimen name="margin_small">@dimen/_5sdp</dimen>
     <dimen name="height_signup_button">@dimen/_30sdp</dimen>
     <dimen name="height_edittext">@dimen/_30sdp</dimen>
+    <dimen name="text_tiny">@dimen/_8ssp</dimen>
 </resources>

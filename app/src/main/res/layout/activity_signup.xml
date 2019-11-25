@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:padding="@dimen/padding_max"
-    tools:context=".ui.Signup"
-    android:background="@color/white">
+    tools:context=".ui.Signup">
 
     <LinearLayout
         android:id="@+id/ll_back_button"
@@ -67,38 +66,38 @@
         android:layout_height="@dimen/height_edittext"
         android:layout_marginTop="@dimen/_5sdp"
         android:background="@drawable/bg_et"
+        android:hint="First Name"
+        android:inputType="textPersonName"
+        android:lines="1"
+        android:maxLength="15"
+        android:maxLines="1"
         android:padding="@dimen/_10sdp"
         android:textColor="@color/black"
-        android:hint="First Name"
         android:textColorHint="@color/light_grey"
         android:textSize="@dimen/_10ssp"
-        app:layout_constraintRight_toLeftOf="@id/et_last_name"
-        app:layout_constraintTop_toBottomOf="@+id/tv_first_name"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:inputType="textPersonName"
-        android:maxLines="1"
-        android:lines="1"
-        android:maxLength="15"/>
+        app:layout_constraintRight_toLeftOf="@id/et_last_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_first_name" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_last_name"
         android:layout_width="0dp"
         android:layout_height="@dimen/height_edittext"
-        android:layout_marginTop="@dimen/margin_small"
         android:layout_marginLeft="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
         android:background="@drawable/bg_et"
+        android:hint="Last Name"
+        android:inputType="textPersonName"
+        android:lines="1"
+        android:maxLength="15"
+        android:maxLines="1"
         android:padding="@dimen/_10sdp"
         android:textColor="@color/black"
-        android:hint="Last Name"
         android:textColorHint="@color/light_grey"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintLeft_toRightOf="@id/et_first_name"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_first_name"
-        android:inputType="textPersonName"
-        android:maxLines="1"
-        android:lines="1"
-        android:maxLength="15"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_first_name" />
 
     <TextView
         android:id="@+id/tv_email"
@@ -119,16 +118,16 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:background="@drawable/bg_et"
         android:hint="Your email here"
-        android:textColorHint="@color/light_grey"
+        android:inputType="textEmailAddress"
+        android:lines="1"
+        android:maxLength="30"
+        android:maxLines="1"
         android:padding="@dimen/_10sdp"
         android:textColor="@color/black"
+        android:textColorHint="@color/light_grey"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email"
-        android:inputType="textEmailAddress"
-        android:maxLines="1"
-        android:lines="1"
-        android:maxLength="30"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_email" />
 
     <TextView
         android:id="@+id/tv_password"
@@ -150,16 +149,16 @@
         android:background="@drawable/bg_et"
         android:drawableRight="@drawable/ic_lock_grey"
         android:hint="• • • • • • • • • • •"
-        android:textColorHint="@color/light_grey"
+        android:inputType="textPassword"
+        android:lines="1"
+        android:maxLength="30"
+        android:maxLines="1"
         android:padding="@dimen/_10sdp"
         android:textColor="@color/black"
+        android:textColorHint="@color/light_grey"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_password"
-        android:inputType="textPassword"
-        android:maxLines="1"
-        android:lines="1"
-        android:maxLength="30"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_password" />
 
     <TextView
         android:id="@+id/tv_retype_password"
@@ -181,18 +180,19 @@
         android:background="@drawable/bg_et"
         android:drawableRight="@drawable/ic_lock_grey"
         android:hint="• • • • • • • • • • •"
-        android:textColorHint="@color/light_grey"
+        android:inputType="textPassword"
+        android:lines="1"
+        android:maxLength="30"
+        android:maxLines="1"
         android:padding="@dimen/_10sdp"
         android:textColor="@color/black"
+        android:textColorHint="@color/light_grey"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_retype_password"
-        android:inputType="textPassword"
-        android:maxLines="1"
-        android:lines="1"
-        android:maxLength="30"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_retype_password" />
 
     <Button
+        android:id="@+id/btn_signup"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_signup_button"
         android:layout_marginTop="@dimen/_20sdp"
@@ -203,12 +203,48 @@
         android:textSize="@dimen/_9ssp"
         app:layout_constraintTop_toBottomOf="@id/et_retype_password" />
 
+    <TextView
+        android:id="@+id/tv_agreeing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center"
+        android:text="By accepting, you are agreeing to the"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_signup" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_agreeing">
+
+        <TextView
+            android:id="@+id/tv_terms_conditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terms and Conditions "
+            android:background="@drawable/bg_red_underline"
+            android:textColor="@color/light_red"
+            android:textSize="@dimen/_8ssp" />
+
+        <TextView
+            android:id="@+id/tv_of_vinvi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="of Vinvi"
+            android:textColor="@color/light_grey"
+            android:textSize="@dimen/_8ssp" />
+
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/ll_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:gravity="center">
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
             android:id="@+id/tv_dont_have_account"
@@ -222,9 +258,9 @@
             android:id="@+id/tv_signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
             android:text="Signup"
             android:textColor="@color/light_red"
-            android:layout_marginLeft="@dimen/_5sdp"
             android:textSize="@dimen/_9ssp" />
 
     </LinearLayout>
