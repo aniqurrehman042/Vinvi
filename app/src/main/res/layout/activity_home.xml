@@ -57,6 +57,7 @@
             android:paddingLeft="@dimen/_30sdp"
             android:paddingRight="@dimen/_30sdp"
             android:paddingTop="@dimen/_20sdp"
+            android:paddingBottom="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:background="@drawable/bg_round_top_white"
             app:layout_constraintTop_toBottomOf="@+id/tv_vinvi_heading"
@@ -119,5 +120,16 @@
             </androidx.viewpager.widget.ViewPager>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@android:drawable/ic_input_add"
+        android:tint="@color/white"
+        android:backgroundTint="@color/light_red"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_50sdp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
