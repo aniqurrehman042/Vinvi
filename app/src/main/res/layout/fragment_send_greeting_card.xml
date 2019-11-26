@@ -1,14 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.SnedGreetingCard">
+    android:background="@color/white"
+    android:padding="@dimen/_20sdp"
+    tools:context=".ui.fragments.SendGreetingCard">
 
-    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/ll_upload"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/bg_small_round_grey"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ll_choose_template"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_upload" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_choose_template"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:background="@drawable/bg_small_round_grey"
+        android:gravity="center"
+        app:layout_constraintLeft_toRightOf="@id/ll_upload"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ll_upload">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_folder_plus" />
+
+    </LinearLayout>
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tv_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="Upload your own card"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintLeft_toLeftOf="@id/ll_upload"
+        app:layout_constraintRight_toRightOf="@id/ll_upload"
+        app:layout_constraintTop_toBottomOf="@id/ll_upload" />
 
-</FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload your own card"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintLeft_toLeftOf="@id/ll_choose_template"
+        app:layout_constraintRight_toRightOf="@id/ll_choose_template"
+        app:layout_constraintTop_toTopOf="@id/tv_upload" />
+
+    <LinearLayout
+        android:id="@+id/ll_card_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/bg_round_grey"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/tv_upload">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_weight="0.25"
+            android:text="Card Title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_card_title"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_edittext"
+            android:layout_weight="0.75"
+            android:background="@drawable/bg_round_grey"
+            android:hint="Sania Azhar"
+            android:inputType="textPersonName"
+            android:lines="1"
+            android:maxLength="30"
+            android:maxLines="1"
+            android:padding="@dimen/_10sdp"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textColorHint="@color/light_grey"
+            android:textSize="@dimen/_10ssp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_send_on"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/bg_round_grey"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/ll_card_title">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_weight="0.25"
+            android:text="Send on"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_send_on"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_edittext"
+            android:layout_weight="0.75"
+            android:background="@drawable/bg_round_grey"
+            android:drawableRight="@drawable/ic_calendar"
+            android:hint="Oct 27/10/2019 "
+            android:inputType="date"
+            android:lines="1"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:padding="@dimen/_10sdp"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textColorHint="@color/light_grey"
+            android:textSize="@dimen/_10ssp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_row_send_days"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_send_on"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center">
+
+        <RadioGroup
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="0.75"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/rb_send_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:buttonTint="@color/light_red"
+                android:text="Send Now"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp" />
+
+            <RadioButton
+                android:id="@+id/rb_send_for_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:buttonTint="@color/light_red"
+                android:checked="true"
+                android:text="Send For Days"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/ll_days"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:background="@drawable/bg_round_grey"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_days"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_edittext"
+                android:layout_weight="0.75"
+                android:background="@drawable/bg_round_grey"
+                android:hint="5"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLength="3"
+                android:maxLines="1"
+                android:padding="@dimen/_10sdp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_grey"
+                android:textSize="@dimen/_10ssp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_row_remind_date_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ll_row_send_days"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_weight="0.2"
+            android:text="Remind on"
+            android:textSize="@dimen/_8ssp"
+            android:textColor="@color/black"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_remind_date"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_edittext"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_weight="0.5"
+            android:background="@drawable/bg_round_grey"
+            android:drawableRight="@drawable/ic_calendar"
+            android:hint="Oct 27/10/2019 "
+            android:inputType="date"
+            android:lines="1"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:padding="@dimen/_10sdp"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textColorHint="@color/light_grey"
+            android:textSize="@dimen/_10ssp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_remind_time"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_edittext"
+            android:layout_weight="0.3"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:background="@drawable/bg_round_grey"
+            android:drawableRight="@drawable/ic_clock"
+            android:hint="07:00 am "
+            android:inputType="time"
+            android:lines="1"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:padding="@dimen/_10sdp"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textColorHint="@color/light_grey"
+            android:textSize="@dimen/_10ssp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_send_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ll_row_remind_date_time"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        android:text="Send Now"
+        android:textAllCaps="false"
+        android:background="@drawable/bg_round_red"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

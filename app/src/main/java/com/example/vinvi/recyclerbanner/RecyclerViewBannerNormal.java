@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.library.banner.RecyclerViewBannerBase;
-import com.example.vinvi.adapters.NormalRecyclerAdapter;
+import com.example.vinvi.adapters.VisitingCardAdapter;
 
 import java.util.List;
 
-public class RecyclerViewBannerNormal extends RecyclerViewBannerBase<LinearLayoutManager, NormalRecyclerAdapter> {
+public class RecyclerViewBannerNormal extends RecyclerViewBannerBase<LinearLayoutManager, VisitingCardAdapter> {
 
     public RecyclerViewBannerNormal(Context context) {
         this(context, null);
@@ -68,8 +68,8 @@ public class RecyclerViewBannerNormal extends RecyclerViewBannerBase<LinearLayou
     }
 
     @Override
-    protected NormalRecyclerAdapter getAdapter(Context context, List<String> list, OnBannerItemClickListener onBannerItemClickListener) {
-        return new NormalRecyclerAdapter(context, list, onBannerItemClickListener);
+    protected VisitingCardAdapter getAdapter(Context context, List<String> list, OnBannerItemClickListener onBannerItemClickListener) {
+        return new VisitingCardAdapter(context, list, onBannerItemClickListener);
     }
 
 

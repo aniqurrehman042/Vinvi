@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/_20sdp"
+    android:paddingBottom="@dimen/_20sdp"
+    android:paddingLeft="@dimen/_30sdp"
+    android:paddingRight="@dimen/_30sdp"
+    android:background="@color/light_grey">
+
+    <LinearLayout
+        android:id="@+id/ll_name_desig_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sania Azhar"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_desig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supervisor"
+            android:textSize="@dimen/_8ssp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_addr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="3 A, Eden City near DHA, Block A, Air Avenue Lahore"
+            android:textSize="@dimen/_5ssp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/riv_person_photo"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ll_name_desig_addr"
+        android:src="@color/light_red"
+        app:riv_corner_radius="100dp"/>
+    
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        app:layout_constraintTop_toBottomOf="@id/riv_person_photo"
+        app:layout_constraintRight_toRightOf="@+id/riv_person_photo"
+        app:layout_constraintLeft_toLeftOf="@id/riv_person_photo"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/ic_delete"/>
+
+    <ImageView
+        android:id="@+id/iv_share"
+        android:layout_width="@dimen/_10sdp"
+        android:layout_height="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/iv_delete"
+        app:layout_constraintRight_toRightOf="@+id/iv_delete"
+        app:layout_constraintLeft_toLeftOf="@id/iv_delete"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:src="@drawable/ic_share"/>
+
+    <LinearLayout
+        android:id="@+id/ll_work_personal_emails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_name_desig_addr"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Work Email:"
+            android:textSize="@dimen/_5ssp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_work_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="saniaazhar@beauty.com"
+            android:textSize="@dimen/_4ssp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Personal Email:"
+            android:textSize="@dimen/_5ssp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_personal_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="saniaazhar@gmail.com"
+            android:textSize="@dimen/_4ssp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_home_office_mobile_numbers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_work_personal_emails"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/tv_home_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home: +(42) 53675790"
+            android:layout_weight="0.33"
+            android:textSize="@dimen/_5ssp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_office_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:text="Office: +(42) 53675790"
+            android:textSize="@dimen/_5ssp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_mobile_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:text="Home: +(92) 3323675790"
+            android:textSize="@dimen/_5ssp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
