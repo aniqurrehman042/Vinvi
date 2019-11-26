@@ -8,7 +8,8 @@
     <dimen name="height_edittext">@dimen/_30sdp</dimen>
     <dimen name="text_tiny">@dimen/_8ssp</dimen>
     <dimen name="size_back_button">@dimen/_15sdp</dimen>
-    <dimen name="margin_back_button">@dimen/_15sdp</dimen>
+    <dimen name="size_back_button_small">@dimen/_25sdp</dimen>
+    <dimen name="margin_back_button">@dimen/_20sdp</dimen>
     <dimen name="text_top_bar">@dimen/_14ssp</dimen>
     <dimen name="margin_top_bar_text">@dimen/_30sdp</dimen>
 </resources>

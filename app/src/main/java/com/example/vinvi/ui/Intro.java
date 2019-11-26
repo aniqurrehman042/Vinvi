@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,21 +46,25 @@ public class Intro extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
+
+                Drawable redDot = ResourcesCompat.getDrawable(getResources(), R.drawable.bg_round_red, null);
+                Drawable greyDot = ResourcesCompat.getDrawable(getResources(), R.drawable.bg_round_grey, null);
+
                 switch (position){
                     case 0:
-                        dot1.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.bg_round_red, null));
-                        dot2.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.bg_round_grey, null));
-                        dot3.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.bg_round_grey, null));
+                        dot1.setBackground(redDot);
+                        dot2.setBackground(greyDot);
+                        dot3.setBackground(greyDot);
                         break;
                     case 1:
-                        dot2.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.bg_round_red, null));
-                        dot1.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.bg_round_grey, null));
-                        dot3.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.bg_round_grey, null));
+                        dot2.setBackground(redDot);
+                        dot1.setBackground(greyDot);
+                        dot3.setBackground(greyDot);
                         break;
                     case 2:
-                        dot3.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.bg_round_red, null));
-                        dot2.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.bg_round_grey, null));
-                        dot1.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.bg_round_grey, null));
+                        dot3.setBackground(redDot);
+                        dot2.setBackground(greyDot);
+                        dot1.setBackground(greyDot);
                         break;
                 }
             }
@@ -98,5 +104,14 @@ public class Intro extends AppCompatActivity {
 
                 break;
         }
+    }
+
+    @OnClick(R.id.tv_skip_button)
+    void skipClick(View view){
+        startAnyActivity(Home.class);
+    }
+
+    private void startAnyActivity(Class<?> activity){
+        startActivity(new Intent(this, activity));
     }
 }

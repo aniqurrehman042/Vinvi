@@ -11,8 +11,8 @@
 
     <LinearLayout
         android:id="@+id/ll_back_button"
-        android:layout_width="@dimen/size_back_button"
-        android:layout_height="@dimen/size_back_button"
+        android:layout_width="@dimen/size_back_button_small"
+        android:layout_height="@dimen/size_back_button_small"
         android:layout_marginTop="@dimen/_10sdp"
         android:background="@drawable/bg_back_button"
         android:padding="@dimen/padding_back_button"
@@ -23,7 +23,7 @@
             android:id="@+id/iv_back_arrow"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/ic_back_arrow" />
+            android:src="@drawable/ic_back_arrow" />
 
     </LinearLayout>
 

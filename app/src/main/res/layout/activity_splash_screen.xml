@@ -8,6 +8,7 @@
     android:padding="@dimen/_50sdp">
 
     <Button
+        android:id="@+id/btn_get_started"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_login_button"
         app:layout_constraintBottom_toBottomOf="parent"

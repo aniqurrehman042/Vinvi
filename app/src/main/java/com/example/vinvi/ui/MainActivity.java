@@ -16,10 +16,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    private void startAnyActivity(Class<?> activity){
-        startActivity(new Intent(this, activity));
-    }
-
 
     public void buttonClick(View view) {
         switch(view.getId()){
@@ -57,5 +53,9 @@ public class MainActivity extends AppCompatActivity {
                 startAnyActivity(UpdateProfile.class);
                 break;
         }
+    }
+
+    private void startAnyActivity(Class<?> activity){
+        startActivity(new Intent(this, activity));
     }
 }
