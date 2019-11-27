@@ -22,7 +22,7 @@
         android:layout_width="@dimen/size_back_button"
         android:layout_height="@dimen/size_back_button"
         android:layout_marginRight="@dimen/margin_back_button"
-        app:layout_constraintTop_toTopOf="@+id/iv_settings"
+        app:layout_constraintTop_toTopOf="@+id/iv_left_button"
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/ic_home"
         android:tint="@color/white" />
