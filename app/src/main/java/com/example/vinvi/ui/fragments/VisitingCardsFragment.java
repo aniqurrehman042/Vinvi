@@ -56,9 +56,17 @@ public class VisitingCardsFragment extends Fragment {
 
         tlMainTabLayout.setupWithViewPager(vpMainPager);
 
-        List<String> visitingCards = new ArrayList<>();
+        List<VisitingCard> visitingCards = new ArrayList<>();
+        visitingCards.add(new VisitingCard("Aniq", "CEO", "Ichra, Lahore", "abc@gmail.com", "abs@gmail.com", "090078601", "090078601", "03330645378", R.drawable.group));
+        visitingCards.add(new VisitingCard("Aniq1", "CEO", "Ichra, Lahore", "abc@gmail.com", "abs@gmail.com", "090078601", "090078601", "03330645378", R.drawable.group));
+        visitingCards.add(new VisitingCard("Aniq2", "CEO", "Ichra, Lahore", "abc@gmail.com", "abs@gmail.com", "090078601", "090078601", "03330645378", R.drawable.group));
+        visitingCards.add(new VisitingCard("Aniq3", "CEO", "Ichra, Lahore", "abc@gmail.com", "abs@gmail.com", "090078601", "090078601", "03330645378", R.drawable.group));
+        visitingCards.add(new VisitingCard("Aniq4", "CEO", "Ichra, Lahore", "abc@gmail.com", "abs@gmail.com", "090078601", "090078601", "03330645378", R.drawable.group));
+        visitingCards.add(new VisitingCard("Aniq5", "CEO", "Ichra, Lahore", "abc@gmail.com", "abs@gmail.com", "090078601", "090078601", "03330645378", R.drawable.group));
+        visitingCards.add(new VisitingCard("Aniq6", "CEO", "Ichra, Lahore", "abc@gmail.com", "abs@gmail.com", "090078601", "090078601", "03330645378", R.drawable.group));
+        visitingCards.add(new VisitingCard("Aniq7", "CEO", "Ichra, Lahore", "abc@gmail.com", "abs@gmail.com", "090078601", "090078601", "03330645378", R.drawable.group));
 
-        VisitingCardAdapter mainRecyclerBannerAdapter = new VisitingCardAdapter(getContext(), visitingCards, null);
+        VisitingCardAdapter mainRecyclerBannerAdapter = new VisitingCardAdapter(getContext(), visitingCards);
         blMainRecyclerBanner.setAdapter(mainRecyclerBannerAdapter);
 
     }

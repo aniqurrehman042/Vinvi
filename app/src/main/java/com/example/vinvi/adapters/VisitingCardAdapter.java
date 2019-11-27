@@ -20,15 +20,13 @@ import butterknife.ButterKnife;
 
 public class VisitingCardAdapter extends RecyclerView.Adapter<VisitingCardAdapter.NormalHolder> {
 
-    private RecyclerViewBannerBase.OnBannerItemClickListener onBannerItemClickListener;
     private Context context;
-    private List<String> urlList;
     private List<VisitingCard> visitingCards;
 
-    public VisitingCardAdapter(Context context, List<String> urlList, RecyclerViewBannerBase.OnBannerItemClickListener onBannerItemClickListener) {
+    public VisitingCardAdapter(Context context, List<VisitingCard> visitingCards) {
         this.context = context;
-        this.urlList = urlList;
-        this.onBannerItemClickListener = onBannerItemClickListener;
+        this.visitingCards = visitingCards;
+
     }
 
     @Override
@@ -38,12 +36,22 @@ public class VisitingCardAdapter extends RecyclerView.Adapter<VisitingCardAdapte
 
     @Override
     public void onBindViewHolder(NormalHolder holder, int position) {
-
+        VisitingCard visitingCard = visitingCards.get(position);
+        holder.tvName.setText(visitingCard.getName());
+        holder.tvDesignation.setText(visitingCard.getDesignation());
+        holder.tvAddress.setText(visitingCard.getAddress());
+        holder.tvWorkEmail.setText(visitingCard.getWorkEmail());
+        holder.tvPersonalEmail.setText(visitingCard.getPersonalEmail());
+        holder.tvWorkEmail.setText(visitingCard.getWorkEmail());
+        holder.tvHomeNumber.setText(visitingCard.getHomeNumber());
+        holder.tvOfficeNumber.setText(visitingCard.getOfficeNumber());
+        holder.tvMobileNumber.setText(visitingCard.getMobileNumber());
+        holder.ivPersonPhoto.setImageResource(visitingCard.getPhotoId());
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return visitingCards.size();
     }
 
     class NormalHolder extends RecyclerView.ViewHolder {

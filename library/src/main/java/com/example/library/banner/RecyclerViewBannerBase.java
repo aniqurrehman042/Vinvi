@@ -27,6 +27,7 @@ import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.library.R;
+import com.example.vinvi.models.VisitingCard;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +55,7 @@ public abstract class RecyclerViewBannerBase<L extends RecyclerView.LayoutManage
     protected boolean isPlaying;
 
     protected boolean isAutoPlaying;
-    protected List<String> tempUrlList = new ArrayList<>();
+    protected List<VisitingCard> tempUrlList = new ArrayList<>();
 
 
     protected Handler mHandler = new Handler(new Handler.Callback() {
@@ -178,7 +179,8 @@ public abstract class RecyclerViewBannerBase<L extends RecyclerView.LayoutManage
 
     protected abstract L getLayoutManager(Context context, int orientation);
 
-    protected abstract A getAdapter(Context context, List<String> list, OnBannerItemClickListener onBannerItemClickListener);
+    protected abstract A getAdapter(Context context, List<VisitingCard> list, OnBannerItemClickListener onBannerItemClickListener);
+
 
     /**
      * 设置轮播间隔时间
@@ -196,7 +198,7 @@ public abstract class RecyclerViewBannerBase<L extends RecyclerView.LayoutManage
      */
     protected synchronized void setPlaying(boolean playing) {
         if (isAutoPlaying && hasInit) {
-            if (!isPlaying && playing ) {
+            if (!isPlaying && playing) {
                 mHandler.sendEmptyMessageDelayed(WHAT_AUTO_PLAY, autoPlayDuration);
                 isPlaying = true;
             } else if (isPlaying && !playing) {
@@ -226,7 +228,7 @@ public abstract class RecyclerViewBannerBase<L extends RecyclerView.LayoutManage
     /**
      * 设置轮播数据集
      */
-    public void initBannerImageView(@NonNull List<String> newList, OnBannerItemClickListener onBannerItemClickListener) {
+    public void initBannerImageView(@NonNull List<VisitingCard> newList, OnBannerItemClickListener onBannerItemClickListener) {
         //解决recyclerView嵌套问题
         if (compareListDifferent(newList, tempUrlList)) {
             hasInit = false;
@@ -256,7 +258,7 @@ public abstract class RecyclerViewBannerBase<L extends RecyclerView.LayoutManage
     /**
      * 设置轮播数据集
      */
-    public void initBannerImageView(@NonNull List<String> newList) {
+    public void initBannerImageView(@NonNull List<VisitingCard> newList) {
         initBannerImageView(newList, null);
     }
 
@@ -387,13 +389,21 @@ public abstract class RecyclerViewBannerBase<L extends RecyclerView.LayoutManage
         return ContextCompat.getColor(getContext(), color);
     }
 
-    protected boolean compareListDifferent(List<String> newTabList, List<String> oldTabList) {
-        if (oldTabList == null || oldTabList.isEmpty())
+    protected boolean compareListDifferent(List<VisitingCard> newTabList, List<VisitingCard> oldTabList) {
+        List<String> dummyList1 = new ArrayList<>();
+        for (int i = 0; i < newTabList.size(); i++)
+            dummyList1.add("a");
+
+        List<String> dummyList2 = new ArrayList<>();
+        for (int i = 0; i < oldTabList.size(); i++)
+            dummyList1.add("a");
+
+        if (oldTabList == null || dummyList2.isEmpty())
             return true;
         if (newTabList.size() != oldTabList.size())
             return true;
         for (int i = 0; i < newTabList.size(); i++) {
-            if (TextUtils.isEmpty(newTabList.get(i)))
+            if (TextUtils.isEmpty(dummyList1.get(i)))
                 return true;
             if (!newTabList.get(i).equals(oldTabList.get(i))) {
                 return true;
