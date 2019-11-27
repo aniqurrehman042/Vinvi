@@ -8,16 +8,18 @@
     tools:context=".ui.fragments.VisitingCardsFragment"
     android:paddingTop="@dimen/_20sdp"
     android:paddingBottom="@dimen/_20sdp"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:gravity="center">
 
     <com.example.library.banner.BannerLayout
         android:id="@+id/bl_main_recycler_banner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:orientation="vertical"
-        app:centerScale="1.3"
         app:autoPlaying="false"
-        app:itemSpace="20"
-        app:moveSpeed="1"/>
+        app:showIndicator="false"
+        app:moveSpeed="1"
+        app:itemSpace="-20"
+        android:background="@color/white"/>
 
 </LinearLayout>
