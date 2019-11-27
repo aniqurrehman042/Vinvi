@@ -46,11 +46,6 @@ public class UpdateProfile extends AppCompatActivity {
         startAnyActivity(Home.class);
     }
 
-    @OnClick(R.id.ll_update_profile)
-    void updateClick(View view){
-        startAnyActivity(UpdateProfile.class);
-    }
-
     @OnClick(R.id.iv_left_button)
     void settingsClick(View view){
         startAnyActivity(Settings.class);

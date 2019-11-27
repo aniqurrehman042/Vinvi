@@ -37,6 +37,12 @@ public class Settings extends AppCompatActivity {
         startAnyActivity(Home.class);
     }
 
+
+    @OnClick(R.id.ll_update_profile)
+    void updateClick(View view){
+        startAnyActivity(UpdateProfile.class);
+    }
+
     private void startAnyActivity(Class<?> activity){
         startActivity(new Intent(this, activity));
     }

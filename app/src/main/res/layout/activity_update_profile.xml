@@ -25,7 +25,8 @@
             android:layout_width="@dimen/_65sdp"
             android:layout_height="@dimen/_65sdp"
             app:riv_corner_radius="100dp"
-            android:src="@color/light_red"
+            android:src="@drawable/land"
+            android:scaleType="centerCrop"
             android:layout_gravity="center_horizontal"/>
 
         <TextView

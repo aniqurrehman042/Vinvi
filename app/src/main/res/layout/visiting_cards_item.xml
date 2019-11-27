@@ -73,6 +73,7 @@
                 android:layout_height="@dimen/_40sdp"
                 android:src="@color/light_red"
                 app:layout_constraintRight_toRightOf="parent"
+                android:scaleType="centerCrop"
                 app:layout_constraintTop_toTopOf="@id/ll_name_desig_addr"
                 app:riv_corner_radius="100dp" />
 
