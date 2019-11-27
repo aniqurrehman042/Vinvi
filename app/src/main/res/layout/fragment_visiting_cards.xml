@@ -19,7 +19,8 @@
         app:autoPlaying="false"
         app:showIndicator="false"
         app:moveSpeed="1"
-        app:itemSpace="-20"
-        android:background="@color/white"/>
+        app:centerScale="1"
+        app:itemSpace="-50"
+        android:background="@color/white" />
 
 </LinearLayout>
