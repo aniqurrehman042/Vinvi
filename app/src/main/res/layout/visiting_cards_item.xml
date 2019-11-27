@@ -1,175 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:gravity="center"
-    android:background="@color/white">
+    android:background="@color/transparent"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_main_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
         android:background="@color/lighter_grey"
-        android:outlineAmbientShadowColor="@color/black"
-        android:outlineSpotShadowColor="@color/black">
+        android:clipToPadding="false"
+        android:elevation="0dp"
+        card_view:cardUseCompatPadding="false"
+        card_view:paddingEnd="0dp"
+        card_view:paddingStart="0dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/lighter_grey"
-        android:orientation="vertical"
-        android:paddingLeft="@dimen/_10sdp"
-        android:paddingTop="@dimen/_10sdp"
-        android:paddingRight="@dimen/_10sdp"
-        android:paddingBottom="@dimen/_10sdp">
-
-        <LinearLayout
-            android:id="@+id/ll_name_desig_addr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sania Azhar"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_12ssp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_desig"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Supervisor"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_8ssp" />
-
-            <TextView
-                android:id="@+id/tv_addr"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:text="3 A, Eden City near DHA, Block A, Air Avenue Lahore"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_5ssp" />
-
-        </LinearLayout>
-
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/riv_person_photo"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:src="@color/light_red"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@id/ll_name_desig_addr"
-            app:riv_corner_radius="100dp" />
-
-        <ImageView
-            android:id="@+id/iv_delete"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:src="@drawable/ic_delete"
-            app:layout_constraintLeft_toLeftOf="@id/riv_person_photo"
-            app:layout_constraintRight_toRightOf="@+id/riv_person_photo"
-            app:layout_constraintTop_toBottomOf="@id/riv_person_photo" />
-
-        <ImageView
-            android:id="@+id/iv_share"
-            android:layout_width="@dimen/_10sdp"
-            android:layout_height="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:src="@drawable/ic_share"
-            app:layout_constraintLeft_toLeftOf="@id/iv_delete"
-            app:layout_constraintRight_toRightOf="@+id/iv_delete"
-            app:layout_constraintTop_toBottomOf="@id/iv_delete" />
-
-        <LinearLayout
-            android:id="@+id/ll_work_personal_emails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:orientation="vertical"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_name_desig_addr">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Work Email:"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_5ssp" />
-
-            <TextView
-                android:id="@+id/tv_work_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="saniaazhar@beauty.com"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_4ssp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Personal Email:"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_5ssp" />
-
-            <TextView
-                android:id="@+id/tv_personal_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="saniaazhar@gmail.com"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_4ssp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_home_office_mobile_numbers"
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_work_personal_emails">
+            android:layout_gravity="center_horizontal"
+            android:background="@color/lighter_grey"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_5sdp">
 
-            <TextView
-                android:id="@+id/tv_home_number"
+            <LinearLayout
+                android:id="@+id/ll_name_desig_addr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.33"
-                android:text="Home: +(42) 53675790"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_5ssp" />
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/tv_office_number"
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sania Azhar"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_desig"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Supervisor"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8ssp" />
+
+                <TextView
+                    android:id="@+id/tv_addr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="3 A, Eden City near DHA, Block A, Air Avenue Lahore"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_5ssp" />
+
+            </LinearLayout>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/riv_person_photo"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:src="@color/light_red"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ll_name_desig_addr"
+                app:riv_corner_radius="100dp" />
+
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/ic_delete"
+                app:layout_constraintLeft_toLeftOf="@id/riv_person_photo"
+                app:layout_constraintRight_toRightOf="@+id/riv_person_photo"
+                app:layout_constraintTop_toBottomOf="@id/riv_person_photo" />
+
+            <ImageView
+                android:id="@+id/iv_share"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:src="@drawable/ic_share"
+                app:layout_constraintLeft_toLeftOf="@id/iv_delete"
+                app:layout_constraintRight_toRightOf="@+id/iv_delete"
+                app:layout_constraintTop_toBottomOf="@id/iv_delete" />
+
+            <LinearLayout
+                android:id="@+id/ll_work_personal_emails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.33"
-                android:text="Office: +(42) 53675790"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_5ssp" />
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_name_desig_addr">
 
-            <TextView
-                android:id="@+id/tv_mobile_number"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Work Email:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_5ssp" />
+
+                <TextView
+                    android:id="@+id/tv_work_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="saniaazhar@beauty.com"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_4ssp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Personal Email:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_5ssp" />
+
+                <TextView
+                    android:id="@+id/tv_personal_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="saniaazhar@gmail.com"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_4ssp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_home_office_mobile_numbers"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.33"
-                android:text="Home: +(92) 3323675790"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_5ssp" />
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_work_personal_emails">
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_home_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:text="Home: +(42) 53675790"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_5ssp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/tv_office_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:text="Office: +(42) 53675790"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_5ssp" />
+
+                <TextView
+                    android:id="@+id/tv_mobile_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:text="Home: +(92) 3323675790"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_5ssp" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_10sdp"
+        android:background="@drawable/card_shadow" />
+
 </LinearLayout>
