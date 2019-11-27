@@ -1,135 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Home"
-    android:background="@color/light_red">
+    android:background="@color/light_red"
+    tools:context=".ui.Home">
 
-    <ImageView
-        android:id="@+id/iv_settings"
-        android:layout_width="@dimen/size_back_button"
-        android:layout_height="@dimen/size_back_button"
-        android:layout_marginTop="@dimen/margin_back_button"
-        android:layout_marginLeft="@dimen/margin_back_button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:srcCompat="@drawable/ic_settings"
-        android:tint="@color/white" />
+    <include android:id="@+id/i_toolbar" layout="@layout/layout_toolbar" />
 
-    <ImageView
-        android:id="@+id/iv_home_button"
-        android:layout_width="@dimen/size_back_button"
-        android:layout_height="@dimen/size_back_button"
-        android:layout_marginRight="@dimen/margin_back_button"
-        app:layout_constraintTop_toTopOf="@+id/iv_settings"
-        app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/ic_home"
-        android:tint="@color/white" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/bg_round_top_white"
+        android:paddingLeft="@dimen/_30sdp"
+        android:paddingTop="@dimen/_20sdp"
+        android:paddingRight="@dimen/_30sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_page_title">
 
-    <ImageView
-        android:id="@+id/iv_location_button"
-        android:layout_width="@dimen/size_back_button"
-        android:layout_height="@dimen/size_back_button"
-        app:layout_constraintTop_toTopOf="@+id/iv_home_button"
-        app:layout_constraintRight_toLeftOf="@id/iv_home_button"
-        app:srcCompat="@drawable/ic_location"
-        android:tint="@color/white" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_edittext"
+            android:background="@drawable/bg_grey_border_circle"
+            android:drawableLeft="@drawable/ic_search"
+            android:hint=" Search Visiting Card"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/light_grey"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintHorizontal_weight="0.75"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_search"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_vinvi_heading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/margin_top_bar_text"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="@dimen/_22ssp"
-        android:text="vinvi" />
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:background="@drawable/bg_round_red_border"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:text="Search"
+            android:textColor="@color/light_red"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/et_search"
+            app:layout_constraintHorizontal_weight="0.25"
+            app:layout_constraintLeft_toRightOf="@+id/et_search"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/et_search" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_main_pager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:paddingLeft="@dimen/_30sdp"
-            android:paddingRight="@dimen/_30sdp"
-            android:paddingTop="@dimen/_20sdp"
-            android:paddingBottom="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:background="@drawable/bg_round_top_white"
-            app:layout_constraintTop_toBottomOf="@+id/tv_vinvi_heading"
-            app:layout_constraintBottom_toBottomOf="parent">
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_search">
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/et_search"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/height_edittext"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/tv_search"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintHorizontal_weight="0.75"
-                android:background="@drawable/bg_grey_border_circle"
-                android:drawableLeft="@drawable/ic_search"
-                android:hint=" Search Visiting Card"
-                android:textColorHint="@color/light_grey"
-                android:padding="@dimen/_10sdp"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_8ssp"
-                android:inputType="text"
-                android:maxLines="1"
-                android:lines="1"
-                android:maxLength="15" />
-
-            <TextView
-                android:id="@+id/tv_search"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:gravity="center"
-                app:layout_constraintHorizontal_weight="0.25"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/et_search"
-                app:layout_constraintTop_toTopOf="@+id/et_search"
-                app:layout_constraintBottom_toBottomOf="@+id/et_search"
-                android:textSize="@dimen/_8ssp"
-                android:layout_marginLeft="@dimen/_5sdp"
-                android:text="Search"
-                android:textColor="@color/light_red"
-                android:background="@drawable/bg_round_red_border"
-                android:paddingHorizontal="@dimen/_10sdp"/>
-
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/vp_main_pager"
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tl_main_tab_layout"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="@dimen/_10sdp"
-                app:layout_constraintTop_toBottomOf="@+id/et_search"
-                app:layout_constraintBottom_toBottomOf="parent">
+                android:layout_height="wrap_content"
+                app:tabIndicatorColor="@color/light_red"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextAppearance="@style/MyCustomTextAppearance"
+                app:tabTextColor="@color/light_grey" />
 
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/tl_main_tab_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:tabTextColor="@color/light_grey"
-                    app:tabSelectedTextColor="@color/black"
-                    app:tabIndicatorColor="@color/light_red"
-                    app:tabTextAppearance="@style/MyCustomTextAppearance"/>
+        </androidx.viewpager.widget.ViewPager>
 
-            </androidx.viewpager.widget.ViewPager>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_50sdp"
+        android:backgroundTint="@color/light_red"
         android:src="@android:drawable/ic_input_add"
         android:tint="@color/white"
-        android:backgroundTint="@color/light_red"
-        android:layout_marginRight="@dimen/_20sdp"
-        android:layout_marginBottom="@dimen/_50sdp"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
